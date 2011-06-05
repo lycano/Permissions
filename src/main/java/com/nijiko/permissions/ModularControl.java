@@ -165,12 +165,13 @@ public class ModularControl extends PermissionHandler {
 
     @Override
     public void saveAll() {
-        Collection<UserStorage> userStores = this.userStores.values();
-        for (UserStorage userStore : userStores) {
+        Collection<UserStorage> collectionUserStores = this.userStores.values();
+        for (UserStorage userStore : collectionUserStores) {
             userStore.save();
         }
-        Collection<GroupStorage> groupStores = this.groupStores.values();
-        for (GroupStorage groupStore : groupStores) {
+        
+        Collection<GroupStorage> collectionGroupStores = this.groupStores.values();
+        for (GroupStorage groupStore : collectionGroupStores) {
             groupStore.save();
         }
     }

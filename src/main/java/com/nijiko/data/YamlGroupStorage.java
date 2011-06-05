@@ -162,12 +162,12 @@ public class YamlGroupStorage implements GroupStorage {
 
     @Override
     public void save() {
-        rwl.readLock().lock();
+        rwl.writeLock().lock();
         try {
             if (!saveOff)
                 forceSave();
         } finally {
-            rwl.readLock().unlock();
+            rwl.writeLock().unlock();
         }
     }
 
